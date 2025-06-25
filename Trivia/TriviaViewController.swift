@@ -32,7 +32,7 @@ class TriviaViewController: UIViewController {
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet var choiceButtons: [UIButton]!
     @IBOutlet weak var replayButton: UIButton!
-//    @IBOutlet weak var questionLabelContainerView: UIView!
+
     
     
     func showQuestion() {
@@ -55,6 +55,15 @@ class TriviaViewController: UIViewController {
         if selectedIndex == correctIndex {
             score += 1
         }
+//        else {
+//            sender.backgroundColor = .red
+//        }
+        
+//        let delayInSeconds = 1.5
+//        
+//        DispatchQueue.main.asyncAfter(deadline: .now() + delayInSeconds) { [weak self] in
+//                   guard let self = self else { return }
+//        
         currentQuestionIndex += 1
         if currentQuestionIndex < allQuestions.count {
             showQuestion()
@@ -75,20 +84,7 @@ class TriviaViewController: UIViewController {
         showQuestion()
         replayButton.isHidden = true
         
-        
-        // add rounded corners to question text field
-//        questionLabel.layer.cornerRadius = 50.0
-//        questionLabel.clipsToBounds = true
-//        questionLabel.backgroundColor = .systemBackground
-        
-        // add box shadow to question text field
-//        questionLabelContainerView.layer.shadowColor = UIColor.black.cgColor
-//        questionLabelContainerView.layer.shadowOpacity = 1.0
-//        questionLabelContainerView.layer.shadowOffset = CGSize(width: 0, height: 2.0)
-//        questionLabelContainerView.layer.shadowRadius = 6.0
-//        
-//        questionLabelContainerView.clipsToBounds = false
-//        questionLabelContainerView.backgroundColor = .clear
+
     }
     
     // hide the replay button
